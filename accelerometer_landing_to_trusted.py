@@ -69,13 +69,12 @@ AccelerometerTrusted_node3 = glueContext.getSink(
     connection_type="s3",
     updateBehavior="UPDATE_IN_DATABASE",
     partitionKeys=[],
-    compression="snappy",
     enableUpdateCatalog=True,
     transformation_ctx="AccelerometerTrusted_node3",
 )
 AccelerometerTrusted_node3.setCatalogInfo(
     catalogDatabase="lakehouse", catalogTableName="accelerometer_trusted"
 )
-AccelerometerTrusted_node3.setFormat("glueparquet")
+AccelerometerTrusted_node3.setFormat("json")
 AccelerometerTrusted_node3.writeFrame(DropFields_node1693829616513)
 job.commit()
